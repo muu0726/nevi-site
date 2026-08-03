@@ -358,7 +358,6 @@ blockquote p:last-child { margin-bottom: 0; }
       <a href="#about">だれ？</a>
       <a href="#features">できること</a>
       <a href="#commands">コマンド</a>
-      <a href="#start">はじめかた</a>
       <a href="#safety">安全設計</a>
       <a href="#design">デザイン</a>
     </nav>
@@ -377,8 +376,8 @@ blockquote p:last-child { margin-bottom: 0; }
         ときには自分自身のコードを書き換えて進化する AI 秘書だよ。
       </p>
       <div class="cta">
-        <a class="btn btn-primary" href="#start">はじめかたを見る</a>
-        <a class="btn btn-ghost" href="#features">できることを見る</a>
+        <a class="btn btn-primary" href="#features">できることを見る</a>
+        <a class="btn btn-ghost" href="#about">ネヴィについて</a>
       </div>
     </div>
 
@@ -649,66 +648,6 @@ blockquote p:last-child { margin-bottom: 0; }
   </div>
 </section>
 
-<!-- ===================== はじめかた ===================== -->
-<section id="start" class="tinted">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="kicker">Getting Started</span>
-      <h2>はじめかた</h2>
-      <p>用意するのは Windows 10 / 11 と Python 3.13 以上、それに Discord Bot ひとつ。あとは順番にやるだけだよ。</p>
-    </div>
-
-    <ol class="steps">
-      <li>
-        <h3>Discord Bot を作って招待する</h3>
-        <p>
-          Discord Developer Portal で Bot を作って、トークンを取得。
-          <strong>MESSAGE CONTENT INTENT を必ず ON</strong> にしてね。これを忘れると会話に反応しないよ。
-        </p>
-        <p>
-          招待URLの SCOPES には <code>bot</code> と <code>applications.commands</code> の
-          <strong>両方</strong>が必要。片方だけだと <code>/</code> コマンドが出てこないんだ。
-        </p>
-      </li>
-      <li>
-        <h3>自分のユーザーIDを調べる</h3>
-        <p>
-          Discord の 設定 → 詳細設定 → 開発者モード を ON にして、自分のアイコンを右クリック → ユーザーIDをコピー。
-          このIDの人が「ご主人さま」になるよ。
-        </p>
-      </li>
-      <li>
-        <h3><code>.env</code> を作る</h3>
-        <p>テンプレートをコピーして値を埋める。最低限この2つがあれば起動するよ。</p>
-<pre><code>DISCORD_BOT_TOKEN=（手順1でコピーしたトークン）
-OWNER_USER_ID=（手順2でコピーした自分のID）</code></pre>
-        <p>
-          あとのキーは使いたい機能に応じて足すだけ。未設定の機能は自動で無効になるから、
-          いきなり全部そろえなくても大丈夫。
-        </p>
-      </li>
-      <li>
-        <h3>起動する</h3>
-        <p>
-          起動用のバッチをダブルクリック。初回だけ仮想環境の作成と依存インストールが走るよ（数分）。
-          異常終了しても5秒後に自動で復帰するから、置いておけば勝手に立ち直る。
-        </p>
-        <p>
-          <strong>初回は DRY RUN モードを推奨。</strong>
-          再起動・スリープ・デプロイ・自己書き換えが「ログ出力だけ」になるから、安心して動作確認できるよ。
-        </p>
-      </li>
-    </ol>
-
-    <blockquote style="margin-top:1.4rem">
-      <p>
-        <strong>Anthropic の APIキーは必須じゃないよ。</strong>
-        Web制作と自己アップデートは、ローカルの <code>claude</code> CLI がログイン済みなら、
-        そのサブスクリプションのまま動くんだ。
-      </p>
-    </blockquote>
-  </div>
-</section>
 
 <!-- ===================== 安全設計 ===================== -->
 <section id="safety">
