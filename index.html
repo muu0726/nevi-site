@@ -565,6 +565,26 @@ blockquote p:last-child { margin-bottom: 0; }
         <p>Google ニュースのテクノロジー面から見出しを集めて、ネヴィの言葉でダイジェストにするよ。毎朝7時（JST）に自動でお届け。<code>/news</code> ならいつでも今すぐ読めるよ。</p>
       </div>
       <div class="card">
+        <span class="ico" aria-hidden="true">📊</span>
+        <h3>Web ダッシュボード</h3>
+        <p><code>http://localhost:8765</code> でローカルステータス画面を配信。CPU/メモリ、AIエンジンの稼働状態、本日の予定をリアルタイム（5秒更新）で可視化するよ。<code>/dashboard</code> で案内するね。</p>
+      </div>
+      <div class="card">
+        <span class="ico" aria-hidden="true">📅</span>
+        <h3>カレンダー＆Obsidian連携</h3>
+        <p>Obsidian Daily Notes (<code>50_デイリー/</code>) のタスクと <code>.calendar.json</code> の予定を自動抽出。朝刊ニュースにも組み込んで毎朝お届けするよ。</p>
+      </div>
+      <div class="card">
+        <span class="ico" aria-hidden="true">💡</span>
+        <h3>自然言語コマンド推測</h3>
+        <p>スラッシュコマンド不要！「明日18時にバイト」「音量上げて」など日常会話からコマンドと引数を自動推測。確認メッセージへの <code>yes</code> や ✅ タップで即時発動するよ。</p>
+      </div>
+      <div class="card">
+        <span class="ico" aria-hidden="true">📈</span>
+        <h3>AI CLI トークン追跡</h3>
+        <p>Claude CLI と Antigravity CLI の消費トークン数、キャッシュ節約率 (%)、セッション数を集計可視化。<code>/token</code> でいつでもレポートを読めるよ。</p>
+      </div>
+      <div class="card">
         <span class="ico" aria-hidden="true">✨</span>
         <h3>自己進化</h3>
         <p>自分のソースコードを書き換えて即再起動。構文チェックに落ちたら破棄、起動できなければ自動でロールバックするよ。</p>
@@ -645,6 +665,7 @@ blockquote p:last-child { margin-bottom: 0; }
           <tr><th scope="row"><code>@ネヴィ &lt;本文&gt;</code></th><td>自然言語で話しかける（意図を判定して振り分け）</td></tr>
           <tr><th scope="row"><code>/ask &lt;質問&gt;</code></th><td>質問する</td></tr>
           <tr><th scope="row"><code>/research &lt;テーマ&gt;</code></th><td>深掘り調査。資料を1件添付できる</td></tr>
+          <tr><th scope="row"><code>/calendar [action] [text]</code></th><td>カレンダー予定・Obsidian デイリーノートの照会・追加・削除</td></tr>
           <tr><th scope="row"><code>/about</code></th><td>ネヴィの自己紹介（アスキーアート付き）</td></tr>
           <tr><th scope="row"><code>/ping</code></th><td>生存確認</td></tr>
           <tr><th scope="row"><code>/help</code></th><td>コマンド一覧</td></tr>
@@ -690,6 +711,8 @@ blockquote p:last-child { margin-bottom: 0; }
         <thead><tr><th scope="col">コマンド</th><th scope="col">説明</th></tr></thead>
         <tbody>
           <tr><th scope="row"><code>/evolve &lt;変更内容&gt;</code></th><td>自分のコードを書き換えて再起動 ⚠️ モデル選択＋✅確認あり</td></tr>
+          <tr><th scope="row"><code>/dashboard</code></th><td>Web ダッシュボード (http://localhost:8765) の URL 表示</td></tr>
+          <tr><th scope="row"><code>/token</code></th><td>Claude CLI ＆ Antigravity CLI のトークン消費量・集計レポート表示</td></tr>
           <tr><th scope="row"><code>/news</code></th><td>最新ITニュースを今すぐ取得してダイジェストで送信</td></tr>
           <tr><th scope="row"><code>/cli &lt;指示&gt;</code></th><td>ローカルの <code>claude</code> CLI を呼び出す（モデル選択あり）</td></tr>
           <tr><th scope="row"><code>/agy &lt;指示&gt;</code></th><td>Antigravity CLI を呼び出す（モデル選択あり）。使い捨てフォルダで動くよ</td></tr>
