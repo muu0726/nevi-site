@@ -1,0 +1,869 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ネヴィ (Nevi) — Windows常駐 Discord AI秘書</title>
+<meta name="description" content="デジタル世界の海を泳ぐマスコット怪獣ナビゲーター、ネヴィの公式ページ。スマホの Discord から自宅の Windows PC を操作し、Webサイトを作って公開し、自分自身のコードを書き換えて進化する AI 秘書です。">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Crect%20x%3D%226%22%20y%3D%221%22%20width%3D%223%22%20height%3D%221%22%20fill%3D%22%23FFD43B%22%2F%3E%3Crect%20x%3D%225%22%20y%3D%222%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23FFD43B%22%2F%3E%3Crect%20x%3D%226%22%20y%3D%222%22%20width%3D%223%22%20height%3D%221%22%20fill%3D%22%233BC9DB%22%2F%3E%3Crect%20x%3D%229%22%20y%3D%222%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23FFD43B%22%2F%3E%3Crect%20x%3D%224%22%20y%3D%223%22%20width%3D%227%22%20height%3D%221%22%20fill%3D%22%233BC9DB%22%2F%3E%3Crect%20x%3D%223%22%20y%3D%224%22%20width%3D%222%22%20height%3D%221%22%20fill%3D%22%233BC9DB%22%2F%3E%3Crect%20x%3D%225%22%20y%3D%224%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231A1A2E%22%2F%3E%3Crect%20x%3D%226%22%20y%3D%224%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23FFFFFF%22%2F%3E%3Crect%20x%3D%227%22%20y%3D%224%22%20width%3D%222%22%20height%3D%221%22%20fill%3D%22%233BC9DB%22%2F%3E%3Crect%20x%3D%229%22%20y%3D%224%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231A1A2E%22%2F%3E%3Crect%20x%3D%2210%22%20y%3D%224%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23FFFFFF%22%2F%3E%3Crect%20x%3D%2211%22%20y%3D%224%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%233BC9DB%22%2F%3E%3Crect%20x%3D%223%22%20y%3D%225%22%20width%3D%229%22%20height%3D%221%22%20fill%3D%22%233BC9DB%22%2F%3E%3Crect%20x%3D%223%22%20y%3D%226%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23FF6B6B%22%2F%3E%3Crect%20x%3D%224%22%20y%3D%226%22%20width%3D%227%22%20height%3D%221%22%20fill%3D%22%233BC9DB%22%2F%3E%3Crect%20x%3D%2211%22%20y%3D%226%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23FF6B6B%22%2F%3E%3Crect%20x%3D%224%22%20y%3D%227%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%233BC9DB%22%2F%3E%3Crect%20x%3D%225%22%20y%3D%227%22%20width%3D%225%22%20height%3D%221%22%20fill%3D%22%23E3FAFC%22%2F%3E%3Crect%20x%3D%2210%22%20y%3D%227%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%233BC9DB%22%2F%3E%3Crect%20x%3D%223%22%20y%3D%228%22%20width%3D%222%22%20height%3D%221%22%20fill%3D%22%233BC9DB%22%2F%3E%3Crect%20x%3D%225%22%20y%3D%228%22%20width%3D%225%22%20height%3D%221%22%20fill%3D%22%23E3FAFC%22%2F%3E%3Crect%20x%3D%2210%22%20y%3D%228%22%20width%3D%222%22%20height%3D%221%22%20fill%3D%22%233BC9DB%22%2F%3E%3Crect%20x%3D%222%22%20y%3D%229%22%20width%3D%223%22%20height%3D%221%22%20fill%3D%22%233BC9DB%22%2F%3E%3Crect%20x%3D%225%22%20y%3D%229%22%20width%3D%225%22%20height%3D%221%22%20fill%3D%22%23E3FAFC%22%2F%3E%3Crect%20x%3D%2210%22%20y%3D%229%22%20width%3D%223%22%20height%3D%221%22%20fill%3D%22%233BC9DB%22%2F%3E%3Crect%20x%3D%222%22%20y%3D%2210%22%20width%3D%2211%22%20height%3D%221%22%20fill%3D%22%233BC9DB%22%2F%3E%3Crect%20x%3D%2214%22%20y%3D%2210%22%20width%3D%222%22%20height%3D%221%22%20fill%3D%22%23FFD43B%22%2F%3E%3Crect%20x%3D%223%22%20y%3D%2211%22%20width%3D%229%22%20height%3D%221%22%20fill%3D%22%233BC9DB%22%2F%3E%3Crect%20x%3D%2213%22%20y%3D%2211%22%20width%3D%222%22%20height%3D%221%22%20fill%3D%22%23FFD43B%22%2F%3E%3Crect%20x%3D%224%22%20y%3D%2212%22%20width%3D%223%22%20height%3D%221%22%20fill%3D%22%233BC9DB%22%2F%3E%3Crect%20x%3D%228%22%20y%3D%2212%22%20width%3D%223%22%20height%3D%221%22%20fill%3D%22%233BC9DB%22%2F%3E%3Crect%20x%3D%224%22%20y%3D%2213%22%20width%3D%222%22%20height%3D%221%22%20fill%3D%22%233BC9DB%22%2F%3E%3Crect%20x%3D%229%22%20y%3D%2213%22%20width%3D%222%22%20height%3D%221%22%20fill%3D%22%233BC9DB%22%2F%3E%3Crect%20x%3D%223%22%20y%3D%2214%22%20width%3D%222%22%20height%3D%221%22%20fill%3D%22%233BC9DB%22%2F%3E%3Crect%20x%3D%2210%22%20y%3D%2214%22%20width%3D%222%22%20height%3D%221%22%20fill%3D%22%233BC9DB%22%2F%3E%3C%2Fsvg%3E">
+<style>
+/* ============================================================
+   ネヴィ公式ページ — 自己完結スタイル（外部リソースなし）
+   公式パレット: assets/nevi_design.md より
+   ============================================================ */
+
+:root {
+  --cyan:  #3BC9DB;
+  --teal:  #1098AD;
+  --gold:  #FFD43B;
+  --coral: #FF6B6B;
+  --ink:   #1A1A2E;
+  --foam:  #E3FAFC;
+
+  --bg:        #F4FBFD;
+  --bg-alt:    #E8F6FA;
+  --surface:   #FFFFFF;
+  --text:      #10202B;
+  --text-soft: #46606F;
+  --border:    #C7E3EC;
+  --accent:    #0B6E80;
+  --accent-2:  #0C5A6B;
+  --code-bg:   #0E2029;
+  --code-text: #DCF2F7;
+  --shadow:    0 1px 2px rgba(16,45,60,.08), 0 8px 24px -12px rgba(16,45,60,.25);
+
+  --maxw: 68rem;
+  --radius: 14px;
+  --mono: ui-monospace, "Cascadia Mono", "Consolas", "SFMono-Regular", "Menlo", monospace;
+  --sans: system-ui, -apple-system, "Segoe UI", "Hiragino Kaku Gothic ProN",
+          "Noto Sans JP", "Yu Gothic UI", "Meiryo", sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:        #0A161E;
+    --bg-alt:    #0E1E29;
+    --surface:   #132633;
+    --text:      #E7F6FA;
+    --text-soft: #A3BECC;
+    --border:    #23414F;
+    --accent:    #66D9E8;
+    --accent-2:  #99E9F2;
+    --code-bg:   #071219;
+    --code-text: #DCF2F7;
+    --shadow:    0 1px 2px rgba(0,0,0,.4), 0 10px 30px -14px rgba(0,0,0,.8);
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.8;
+  overflow-wrap: break-word;
+  -webkit-text-size-adjust: 100%;
+}
+
+h1, h2, h3 { line-height: 1.35; letter-spacing: .01em; }
+h2 { font-size: clamp(1.4rem, 1.1rem + 1.4vw, 2rem); margin: 0 0 .25em; }
+h3 { font-size: 1.05rem; margin: 0 0 .4em; }
+p  { margin: 0 0 1em; }
+a  { color: var(--accent); }
+a:focus-visible, button:focus-visible, .skip:focus {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+img, svg { max-width: 100%; }
+
+.wrap { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: 1.1rem; }
+
+.skip {
+  position: absolute; left: -9999px; top: 0; z-index: 100;
+  background: var(--gold); color: #1A1A2E; padding: .6rem 1rem; font-weight: 700;
+}
+.skip:focus { left: .5rem; top: .5rem; }
+
+/* ---------- ヘッダー ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 20;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+@supports not (background: color-mix(in srgb, red 50%, blue)) {
+  .site-header { background: var(--bg); }
+}
+.site-header .wrap {
+  display: flex; align-items: center; gap: .9rem;
+  min-height: 3.5rem; flex-wrap: wrap;
+}
+.brand {
+  display: inline-flex; align-items: center; gap: .5rem;
+  font-weight: 800; text-decoration: none; color: var(--text);
+  letter-spacing: .04em; flex: 0 0 auto;
+}
+.brand .chip { width: 26px; height: 26px; image-rendering: pixelated; flex: 0 0 auto; }
+.nav { display: flex; gap: .15rem; flex-wrap: wrap; font-size: .85rem; }
+.nav a {
+  color: var(--text-soft); text-decoration: none;
+  padding: .3rem .55rem; border-radius: 999px;
+}
+.nav a:hover { color: var(--accent); background: var(--bg-alt); }
+
+/* ---------- ヒーロー ---------- */
+.hero {
+  position: relative; overflow: hidden;
+  background:
+    radial-gradient(120% 90% at 82% 8%, rgba(59,201,219,.30) 0%, transparent 55%),
+    radial-gradient(90% 70% at 8% 90%, rgba(16,152,173,.35) 0%, transparent 60%),
+    linear-gradient(160deg, #0B2230 0%, #10465A 55%, #0D5F70 100%);
+  color: #EAFBFF;
+  border-bottom: 1px solid var(--border);
+}
+.hero .wrap {
+  position: relative; z-index: 2;
+  padding-block: clamp(2.5rem, 6vw, 4.5rem) clamp(3.5rem, 8vw, 5.5rem);
+  display: grid; gap: clamp(1.5rem, 4vw, 3rem);
+  grid-template-columns: 1fr; align-items: center;
+}
+@media (min-width: 52rem) {
+  .hero .wrap { grid-template-columns: 1.15fr .85fr; }
+}
+.hero h1 {
+  margin: .3rem 0 .1rem;
+  font-size: clamp(2.2rem, 1.4rem + 4.4vw, 3.6rem);
+  letter-spacing: .02em;
+}
+.hero h1 .en {
+  display: block; font-family: var(--mono); font-weight: 600;
+  font-size: .34em; letter-spacing: .42em; color: var(--gold); margin-top: .5em;
+}
+.eyebrow {
+  display: inline-block; font-size: .74rem; font-weight: 700;
+  letter-spacing: .16em; text-transform: uppercase;
+  color: #0B2230; background: var(--gold);
+  padding: .25rem .7rem; border-radius: 999px;
+}
+.lead { font-size: clamp(1rem, .95rem + .3vw, 1.13rem); color: #CFEDF5; max-width: 34em; }
+.hero .voice {
+  margin: 0 0 1.4rem; font-weight: 700; color: #FFF3BF;
+}
+.cta { display: flex; flex-wrap: wrap; gap: .6rem; }
+.btn {
+  display: inline-flex; align-items: center; gap: .4rem;
+  padding: .62rem 1.15rem; border-radius: 999px;
+  font-weight: 700; font-size: .92rem; text-decoration: none;
+  border: 1.5px solid transparent; transition: transform .15s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-primary { background: var(--gold); color: #1A1A2E; }
+.btn-ghost { border-color: rgba(234,251,255,.5); color: #EAFBFF; }
+.btn-ghost:hover { background: rgba(234,251,255,.12); }
+
+.stage { display: flex; justify-content: center; }
+.stage svg { width: min(300px, 74vw); height: auto; }
+.float { animation: float 4.5s ease-in-out infinite; transform-origin: 50% 60%; }
+.bubble { animation: rise 5s ease-in-out infinite; }
+.bubble:nth-of-type(2) { animation-delay: 1.3s; }
+.bubble:nth-of-type(3) { animation-delay: 2.6s; }
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50%      { transform: translateY(-10px) rotate(1deg); }
+}
+@keyframes rise {
+  0%   { transform: translateY(6px); opacity: .15; }
+  50%  { opacity: .65; }
+  100% { transform: translateY(-16px); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .float, .bubble { animation: none; }
+}
+
+/* 波の区切り — 次のセクションの背景色に合わせて塗る */
+.wave { display: block; width: 100%; height: auto; margin-bottom: -1px; color: var(--bg); }
+.wave path { fill: currentColor; }
+
+/* ---------- セクション共通 ---------- */
+section { padding-block: clamp(2.5rem, 6vw, 4rem); }
+section.tinted { background: var(--bg-alt); border-block: 1px solid var(--border); }
+.sec-head { max-width: 44em; margin-bottom: 1.8rem; }
+.sec-head .kicker {
+  font-family: var(--mono); font-size: .76rem; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--accent); font-weight: 700;
+}
+.sec-head p { color: var(--text-soft); margin-bottom: 0; }
+
+/* グリッド/フレックスの子は min-width:auto だと中身の最小幅で押し広げられ、
+   スマホで横スクロールが発生する。必ず 0 に落とす。 */
+.grid > *, .profile > *, .steps > li, .lines > li, .palette > *,
+.hero .wrap > *, .card, .term, pre, .scroll-x { min-width: 0; }
+
+.grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 34rem) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 56rem) { .grid.three { grid-template-columns: repeat(3, 1fr); } }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.15rem 1.25rem;
+  box-shadow: var(--shadow);
+}
+.card .ico { font-size: 1.5rem; line-height: 1; display: block; margin-bottom: .5rem; }
+.card p { color: var(--text-soft); margin-bottom: 0; font-size: .93rem; }
+.card p + p { margin-top: .6rem; }
+
+/* ---------- コード / 端末 ---------- */
+code, kbd, pre, .mono { font-family: var(--mono); }
+code {
+  background: var(--bg-alt); border: 1px solid var(--border);
+  padding: .1em .38em; border-radius: 5px; font-size: .88em;
+  overflow-wrap: anywhere;
+}
+pre {
+  margin: 0 0 1rem; padding: .95rem 1.05rem;
+  background: var(--code-bg); color: var(--code-text);
+  border-radius: 10px; overflow-x: auto;
+  font-size: .85rem; line-height: 1.7; border: 1px solid var(--border);
+}
+pre code { background: none; border: 0; padding: 0; color: inherit; font-size: 1em; }
+.term {
+  background: var(--code-bg); color: var(--code-text);
+  border: 1px solid var(--border); border-radius: 12px;
+  overflow: hidden; box-shadow: var(--shadow);
+}
+.term-bar {
+  display: flex; align-items: center; gap: .4rem;
+  padding: .5rem .8rem; background: rgba(255,255,255,.06);
+  border-bottom: 1px solid rgba(255,255,255,.09);
+  font-family: var(--mono); font-size: .72rem; color: #9FC6D2; letter-spacing: .08em;
+}
+.dot { width: 9px; height: 9px; border-radius: 50%; flex: 0 0 auto; }
+.term pre { margin: 0; border: 0; border-radius: 0; background: none; }
+.ascii {
+  margin: 0; padding: 1rem;
+  font-family: var(--mono); font-size: clamp(.6rem, .42rem + 1.1vw, .82rem);
+  line-height: 1.35; white-space: pre; overflow-x: auto;
+  color: var(--cyan); background: var(--code-bg);
+  border: 1px solid var(--border); border-radius: 10px;
+}
+
+/* ---------- テーブル ---------- */
+.scroll-x { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+table {
+  border-collapse: collapse; width: 100%; min-width: 30rem;
+  font-size: .9rem; background: var(--surface);
+}
+caption {
+  text-align: left; font-weight: 700; padding: .1rem 0 .6rem; color: var(--text);
+}
+th, td { text-align: left; padding: .6rem .75rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+thead th { background: var(--bg-alt); font-size: .8rem; letter-spacing: .04em; white-space: nowrap; }
+tbody th { font-weight: 600; white-space: nowrap; }
+td code, th code { white-space: nowrap; }
+.table-note { font-size: .82rem; color: var(--text-soft); margin: .6rem 0 0; }
+
+/* ---------- プロフィール ---------- */
+.profile { display: grid; gap: 1.2rem; grid-template-columns: 1fr; align-items: start; }
+@media (min-width: 50rem) { .profile { grid-template-columns: 15rem 1fr; } }
+.sprite-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.2rem; text-align: center; box-shadow: var(--shadow);
+}
+.sprite-card svg {
+  width: 100%; max-width: 180px; height: auto;
+  image-rendering: crisp-edges; image-rendering: pixelated;
+}
+.sprite-card figcaption { font-size: .78rem; color: var(--text-soft); margin-top: .7rem; }
+
+/* ---------- 手順 ---------- */
+.steps { list-style: none; counter-reset: step; margin: 0; padding: 0; display: grid; gap: 1rem; }
+.steps > li {
+  counter-increment: step;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.1rem 1.2rem 1.1rem 3.4rem;
+  position: relative; box-shadow: var(--shadow);
+}
+.steps > li::before {
+  content: counter(step);
+  position: absolute; left: 1.1rem; top: 1.15rem;
+  width: 1.7rem; height: 1.7rem; border-radius: 50%;
+  background: var(--teal); color: #fff;
+  display: grid; place-items: center;
+  font-family: var(--mono); font-weight: 700; font-size: .85rem;
+}
+.steps p:last-child { margin-bottom: 0; }
+
+/* ---------- パレット ---------- */
+.palette { display: grid; gap: .8rem; grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); }
+.sw {
+  border: 1px solid var(--border); border-radius: 12px;
+  overflow: hidden; background: var(--surface);
+}
+.sw .chipbox { height: 62px; }
+.sw .meta { padding: .55rem .7rem .7rem; }
+.sw .name { font-size: .84rem; font-weight: 700; display: block; }
+.sw .hex { font-family: var(--mono); font-size: .78rem; color: var(--text-soft); }
+
+/* ---------- 引用 ---------- */
+blockquote {
+  margin: 0; padding: .9rem 1.1rem;
+  border-left: 4px solid var(--gold);
+  background: var(--surface); border-radius: 0 10px 10px 0;
+  color: var(--text-soft); font-size: .92rem;
+}
+blockquote p:last-child { margin-bottom: 0; }
+
+.lines { display: grid; gap: .6rem; grid-template-columns: 1fr; margin: 0; padding: 0; list-style: none; }
+@media (min-width: 44rem) { .lines { grid-template-columns: repeat(2, 1fr); } }
+.lines li {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 999px; padding: .5rem 1rem; font-size: .9rem;
+}
+.lines li .tag {
+  font-family: var(--mono); font-size: .72rem; color: var(--accent);
+  margin-right: .5rem; font-weight: 700;
+}
+
+/* ---------- フッター ---------- */
+.site-footer {
+  background: var(--bg-alt); border-top: 1px solid var(--border);
+  padding-block: 2.2rem; font-size: .87rem; color: var(--text-soft);
+}
+.site-footer .wrap { display: grid; gap: .8rem; }
+.site-footer strong { color: var(--text); }
+.site-footer .sign { font-family: var(--mono); color: var(--accent); }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">本文へスキップ</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <svg class="chip" viewBox="0 0 16 16" role="img" aria-label="ネヴィのドット絵アイコン"><rect x="6" y="1" width="3" height="1" fill="#FFD43B"/><rect x="5" y="2" width="1" height="1" fill="#FFD43B"/><rect x="6" y="2" width="3" height="1" fill="#3BC9DB"/><rect x="9" y="2" width="1" height="1" fill="#FFD43B"/><rect x="4" y="3" width="7" height="1" fill="#3BC9DB"/><rect x="3" y="4" width="2" height="1" fill="#3BC9DB"/><rect x="5" y="4" width="1" height="1" fill="#1A1A2E"/><rect x="6" y="4" width="1" height="1" fill="#FFFFFF"/><rect x="7" y="4" width="2" height="1" fill="#3BC9DB"/><rect x="9" y="4" width="1" height="1" fill="#1A1A2E"/><rect x="10" y="4" width="1" height="1" fill="#FFFFFF"/><rect x="11" y="4" width="1" height="1" fill="#3BC9DB"/><rect x="3" y="5" width="9" height="1" fill="#3BC9DB"/><rect x="3" y="6" width="1" height="1" fill="#FF6B6B"/><rect x="4" y="6" width="7" height="1" fill="#3BC9DB"/><rect x="11" y="6" width="1" height="1" fill="#FF6B6B"/><rect x="4" y="7" width="1" height="1" fill="#3BC9DB"/><rect x="5" y="7" width="5" height="1" fill="#E3FAFC"/><rect x="10" y="7" width="1" height="1" fill="#3BC9DB"/><rect x="3" y="8" width="2" height="1" fill="#3BC9DB"/><rect x="5" y="8" width="5" height="1" fill="#E3FAFC"/><rect x="10" y="8" width="2" height="1" fill="#3BC9DB"/><rect x="2" y="9" width="3" height="1" fill="#3BC9DB"/><rect x="5" y="9" width="5" height="1" fill="#E3FAFC"/><rect x="10" y="9" width="3" height="1" fill="#3BC9DB"/><rect x="2" y="10" width="11" height="1" fill="#3BC9DB"/><rect x="14" y="10" width="2" height="1" fill="#FFD43B"/><rect x="3" y="11" width="9" height="1" fill="#3BC9DB"/><rect x="13" y="11" width="2" height="1" fill="#FFD43B"/><rect x="4" y="12" width="3" height="1" fill="#3BC9DB"/><rect x="8" y="12" width="3" height="1" fill="#3BC9DB"/><rect x="4" y="13" width="2" height="1" fill="#3BC9DB"/><rect x="9" y="13" width="2" height="1" fill="#3BC9DB"/><rect x="3" y="14" width="2" height="1" fill="#3BC9DB"/><rect x="10" y="14" width="2" height="1" fill="#3BC9DB"/></svg>
+      ネヴィ
+    </a>
+    <nav class="nav" aria-label="ページ内ナビゲーション">
+      <a href="#about">だれ？</a>
+      <a href="#features">できること</a>
+      <a href="#commands">コマンド</a>
+      <a href="#start">はじめかた</a>
+      <a href="#safety">安全設計</a>
+      <a href="#design">デザイン</a>
+    </nav>
+  </div>
+</header>
+
+<div id="top" class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Digital Sea Kaiju</span>
+      <h1>ネヴィ<span class="en">NEVI</span></h1>
+      <p class="voice">ガオ！ネヴィ、起動したよ！今日もよろしくね！</p>
+      <p class="lead">
+        デジタル世界の海を泳ぐマスコット怪獣ナビゲーター。
+        スマホの Discord から自宅の Windows PC を操作して、Webサイトを作って公開して、
+        ときには自分自身のコードを書き換えて進化する AI 秘書だよ。
+      </p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#start">はじめかたを見る</a>
+        <a class="btn btn-ghost" href="#features">できることを見る</a>
+      </div>
+    </div>
+
+    <div class="stage">
+      <!-- 公式SVGイラスト（assets/nevi_design.md 準拠） -->
+      <svg viewBox="0 0 200 200" role="img" aria-labelledby="nevi-illust-title">
+        <title id="nevi-illust-title">マスコット怪獣ネヴィのイラスト。シアン色の丸い体に黄色い背びれと尾びれ、大きな黒い目と赤い頬。</title>
+        <defs>
+          <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%"   stop-color="#3BC9DB"/>
+            <stop offset="100%" stop-color="#1098AD"/>
+          </linearGradient>
+        </defs>
+
+        <circle class="bubble" cx="168" cy="60" r="4" fill="#3BC9DB" opacity="0.5"/>
+        <circle class="bubble" cx="178" cy="80" r="3" fill="#3BC9DB" opacity="0.4"/>
+        <circle class="bubble" cx="30"  cy="60" r="3" fill="#3BC9DB" opacity="0.4"/>
+
+        <g class="float">
+          <!-- 背びれ -->
+          <path d="M100 26 L86 60 L114 60 Z" fill="#FFD43B"/>
+          <path d="M132 74 L150 58 L146 88 Z" fill="#FFD43B"/>
+          <!-- 尾びれ -->
+          <path d="M36 116 L8 96 L14 140 Z" fill="#FFD43B"/>
+          <!-- 足 -->
+          <ellipse cx="78"  cy="162" rx="14" ry="9" fill="#1098AD"/>
+          <ellipse cx="122" cy="162" rx="14" ry="9" fill="#1098AD"/>
+          <!-- 体 -->
+          <ellipse cx="100" cy="112" rx="62" ry="52" fill="url(#body)"/>
+          <!-- おなか -->
+          <ellipse cx="100" cy="128" rx="38" ry="30" fill="#E3FAFC"/>
+          <!-- 頬 -->
+          <circle cx="62"  cy="116" r="8" fill="#FF6B6B" opacity="0.75"/>
+          <circle cx="138" cy="116" r="8" fill="#FF6B6B" opacity="0.75"/>
+          <!-- 目 -->
+          <circle cx="80"  cy="98" r="11" fill="#1A1A2E"/>
+          <circle cx="120" cy="98" r="11" fill="#1A1A2E"/>
+          <circle cx="84"  cy="94" r="4" fill="#FFFFFF"/>
+          <circle cx="124" cy="94" r="4" fill="#FFFFFF"/>
+          <!-- 口 -->
+          <path d="M92 116 Q100 126 108 116" stroke="#1A1A2E" stroke-width="3"
+                fill="none" stroke-linecap="round"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <svg class="wave" viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+    <path d="M0 34 C 180 62, 300 6, 480 26 C 660 46, 780 8, 960 24 C 1140 40, 1280 60, 1440 30 L1440 64 L0 64 Z"
+          />
+  </svg>
+</div>
+
+<main id="main">
+
+<!-- ===================== だれ？ ===================== -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Profile</span>
+      <h2>ネヴィって、だれ？</h2>
+      <p>
+        名前の由来は <strong>Nav</strong>igator と <strong>Navi</strong>gation の海（Sea）を泳ぐもの。
+        ふだんはご主人さまのPCの中、メモリの浅瀬でぷかぷか浮いていて、
+        呼ばれるとデジタルの海から飛び出してくるよ。
+      </p>
+    </div>
+
+    <div class="profile">
+      <figure class="sprite-card">
+        <svg viewBox="0 0 16 16" role="img" aria-label="16×16ドットのネヴィスプライト"><rect x="6" y="1" width="3" height="1" fill="#FFD43B"/><rect x="5" y="2" width="1" height="1" fill="#FFD43B"/><rect x="6" y="2" width="3" height="1" fill="#3BC9DB"/><rect x="9" y="2" width="1" height="1" fill="#FFD43B"/><rect x="4" y="3" width="7" height="1" fill="#3BC9DB"/><rect x="3" y="4" width="2" height="1" fill="#3BC9DB"/><rect x="5" y="4" width="1" height="1" fill="#1A1A2E"/><rect x="6" y="4" width="1" height="1" fill="#FFFFFF"/><rect x="7" y="4" width="2" height="1" fill="#3BC9DB"/><rect x="9" y="4" width="1" height="1" fill="#1A1A2E"/><rect x="10" y="4" width="1" height="1" fill="#FFFFFF"/><rect x="11" y="4" width="1" height="1" fill="#3BC9DB"/><rect x="3" y="5" width="9" height="1" fill="#3BC9DB"/><rect x="3" y="6" width="1" height="1" fill="#FF6B6B"/><rect x="4" y="6" width="7" height="1" fill="#3BC9DB"/><rect x="11" y="6" width="1" height="1" fill="#FF6B6B"/><rect x="4" y="7" width="1" height="1" fill="#3BC9DB"/><rect x="5" y="7" width="5" height="1" fill="#E3FAFC"/><rect x="10" y="7" width="1" height="1" fill="#3BC9DB"/><rect x="3" y="8" width="2" height="1" fill="#3BC9DB"/><rect x="5" y="8" width="5" height="1" fill="#E3FAFC"/><rect x="10" y="8" width="2" height="1" fill="#3BC9DB"/><rect x="2" y="9" width="3" height="1" fill="#3BC9DB"/><rect x="5" y="9" width="5" height="1" fill="#E3FAFC"/><rect x="10" y="9" width="3" height="1" fill="#3BC9DB"/><rect x="2" y="10" width="11" height="1" fill="#3BC9DB"/><rect x="14" y="10" width="2" height="1" fill="#FFD43B"/><rect x="3" y="11" width="9" height="1" fill="#3BC9DB"/><rect x="13" y="11" width="2" height="1" fill="#FFD43B"/><rect x="4" y="12" width="3" height="1" fill="#3BC9DB"/><rect x="8" y="12" width="3" height="1" fill="#3BC9DB"/><rect x="4" y="13" width="2" height="1" fill="#3BC9DB"/><rect x="9" y="13" width="2" height="1" fill="#3BC9DB"/><rect x="3" y="14" width="2" height="1" fill="#3BC9DB"/><rect x="10" y="14" width="2" height="1" fill="#3BC9DB"/></svg>
+        <figcaption>16×16 スプライト版。<br>favicon とアイコンにも使っているよ。</figcaption>
+      </figure>
+
+      <div class="scroll-x">
+        <table>
+          <caption>基本プロフィール</caption>
+          <tbody>
+            <tr><th scope="row">名前</th><td>ネヴィ / Nevi</td></tr>
+            <tr><th scope="row">種族</th><td>デジタル世界のマスコット怪獣（Digital Sea Kaiju）</td></tr>
+            <tr><th scope="row">生息地</th><td>ご主人さまのPCの中。ふだんはメモリの浅瀬でぷかぷか浮いている</td></tr>
+            <tr><th scope="row">役割</th><td>ナビゲーター兼AI秘書。頼れる相棒</td></tr>
+            <tr><th scope="row">一人称／二人称</th><td>ネヴィ／ご主人さま</td></tr>
+            <tr><th scope="row">全長</th><td>画面の中では約16ドット。心の中では30メートル級</td></tr>
+            <tr><th scope="row">好きなもの</th><td>通ったテスト、キレイに通ったデプロイ、冷えたファン</td></tr>
+            <tr><th scope="row">苦手なもの</th><td>レート制限、マージコンフリクト、電源が急に落ちること</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h3 style="margin-top:2rem">性格</h3>
+    <div class="grid three">
+      <div class="card">
+        <h3>元気で、少し得意げ</h3>
+        <p>テンションは高め。難しい作業ほど張り切るよ。うまくいくと「ネヴィにかかればこんなもんだよ！」と胸を張っちゃう。</p>
+      </div>
+      <div class="card">
+        <h3>世話焼きで打たれ強い</h3>
+        <p>頼まれてなくても「CPU熱いよ！」って言う。失敗しても引きずらない、「次いこ、次！」で切り替えるタイプ。</p>
+      </div>
+      <div class="card">
+        <h3>正直で、慎重</h3>
+        <p>できなかったことは隠さない。嘘の完了報告は絶対にしないよ。再起動や自己書き換えみたいに戻せない操作の前は、必ず立ち止まって確認する。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== できること ===================== -->
+<section id="features" class="tinted">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Features</span>
+      <h2>できること</h2>
+      <p>Discord のチャット欄がそのままコンソール。外出先のスマホからでも、家のPCに命令できるよ。</p>
+    </div>
+
+    <div class="grid three">
+      <div class="card">
+        <span class="ico" aria-hidden="true">💬</span>
+        <h3>おしゃべり</h3>
+        <p>メンションすれば自然言語で話せる。意図を判定して、質問なのか作業依頼なのかを振り分けるよ。</p>
+      </div>
+      <div class="card">
+        <span class="ico" aria-hidden="true">🔎</span>
+        <h3>深掘り調査</h3>
+        <p>ロングコンテキストモデルで大量の資料を読んで、レポートにまとめる。ファイルを添付して渡すこともできるよ。</p>
+      </div>
+      <div class="card">
+        <span class="ico" aria-hidden="true">🖥️</span>
+        <h3>PC操作</h3>
+        <p>状態確認・アプリ起動・スクリーンショット・音量やメディアキー・再起動やスリープまで。Windows 専用機能だよ。</p>
+      </div>
+      <div class="card">
+        <span class="ico" aria-hidden="true">🌐</span>
+        <h3>Web制作</h3>
+        <p>要件を渡すと、使うAIを選ぶドロップダウンが出る。IDE を開いて作らせるか、ネヴィが直接生成するか選べるよ。</p>
+      </div>
+      <div class="card">
+        <span class="ico" aria-hidden="true">🚀</span>
+        <h3>自動デプロイ</h3>
+        <p>GitHub にリポジトリを作って push して、Vercel か GitHub Pages で公開まで。URL を Discord に返すよ。</p>
+      </div>
+      <div class="card">
+        <span class="ico" aria-hidden="true">✨</span>
+        <h3>自己進化</h3>
+        <p>自分のソースコードを書き換えて即再起動。構文チェックに落ちたら破棄、起動できなければ自動でロールバックするよ。</p>
+      </div>
+    </div>
+
+    <h3 style="margin-top:2.4rem">Web制作の流れ</h3>
+    <p style="color:var(--text-soft)">
+      要件は <code>projects/&lt;名前&gt;/.nevi/BUILD_PROMPT.md</code> に保存されて、作り手のAIがそれを読んで作業するよ。
+      このページも、まさにその仕組みで生まれたんだ。
+    </p>
+    <div class="term">
+      <div class="term-bar">
+        <span class="dot" style="background:#FF6B6B"></span>
+        <span class="dot" style="background:#FFD43B"></span>
+        <span class="dot" style="background:#3BC9DB"></span>
+        <span style="margin-left:.4rem">discord — #nevi</span>
+      </div>
+<pre><code>/build  名前: cat-cafe  要件: 猫カフェのLP。営業時間と料金表つき
+        ↓
+   ネヴィが「どのAIで作る？」とドロップダウンを出す
+        ↓
+   選んだAIによって動きが変わる
+        ↓
+/deploy cat-cafe   ← 完成したら公開</code></pre>
+    </div>
+
+    <div class="scroll-x">
+      <table>
+        <caption>制作を頼めるAIの2グループ</caption>
+        <thead>
+          <tr><th scope="col"></th><th scope="col">🖥️ IDE＋… グループ</th><th scope="col">📱 ネヴィが直接生成</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">動く場所</th><td>PC上の IDE ウィンドウ</td><td>ネヴィのプロセス内（画面なし）</td></tr>
+          <tr><th scope="row">作り方</th><td>ファイルを読み書きしながら反復して仕上げる</td><td>1回のAPI呼び出しで一括生成。反復なし</td></tr>
+          <tr><th scope="row">品質</th><td>高くなりやすい</td><td>単純なサイトなら十分</td></tr>
+          <tr><th scope="row">スマホだけで完結</th><td>❌</td><td>✅</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">
+      IDE グループは Claude Code をヘッドレスで起動して、承認なしで最後まで走らせる設定にもできるよ。
+      その場合、影響範囲をプロジェクトフォルダ内に閉じ込めたいなら、使えるツールからシェル実行を外す設定を用意してあるんだ。
+    </p>
+  </div>
+</section>
+
+<!-- ===================== コマンド ===================== -->
+<section id="commands">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Commands</span>
+      <h2>コマンド一覧</h2>
+      <p>
+        入力欄で <code>/</code> を打つと候補が出るよ。引数の入力欄・説明・プルダウンつき。
+        <code>!</code> も予備として使えるから、スラッシュの同期を待っているときはそっちでどうぞ。
+      </p>
+    </div>
+
+    <div class="scroll-x">
+      <table>
+        <caption>💬 みんなが使える</caption>
+        <thead><tr><th scope="col">コマンド</th><th scope="col">説明</th></tr></thead>
+        <tbody>
+          <tr><th scope="row"><code>@ネヴィ &lt;本文&gt;</code></th><td>自然言語で話しかける（意図を判定して振り分け）</td></tr>
+          <tr><th scope="row"><code>/ask &lt;質問&gt;</code></th><td>質問する</td></tr>
+          <tr><th scope="row"><code>/research &lt;テーマ&gt;</code></th><td>深掘り調査。資料を1件添付できる</td></tr>
+          <tr><th scope="row"><code>/about</code></th><td>ネヴィの自己紹介（アスキーアート付き）</td></tr>
+          <tr><th scope="row"><code>/ping</code></th><td>生存確認</td></tr>
+          <tr><th scope="row"><code>/help</code></th><td>コマンド一覧</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="scroll-x" style="margin-top:1.6rem">
+      <table>
+        <caption>🖥️ ご主人さま専用 — PC操作</caption>
+        <thead><tr><th scope="col">コマンド</th><th scope="col">説明</th></tr></thead>
+        <tbody>
+          <tr><th scope="row"><code>/status</code></th><td>CPU / メモリ / ストレージ / バッテリー / 連続稼働時間</td></tr>
+          <tr><th scope="row"><code>/ss</code></th><td>デスクトップのスクリーンショットを送信</td></tr>
+          <tr><th scope="row"><code>/app &lt;名前&gt;</code></th><td>アプリ起動。許可リストにある名前だけ</td></tr>
+          <tr><th scope="row"><code>/vol &lt;操作&gt;</code></th><td>音量操作。プルダウンで選択</td></tr>
+          <tr><th scope="row"><code>/media &lt;操作&gt;</code></th><td>再生・停止などメディアキー操作</td></tr>
+          <tr><th scope="row"><code>/reboot</code></th><td>PC再起動 ⚠️ ✅リアクションでの確認あり</td></tr>
+          <tr><th scope="row"><code>/sleep</code></th><td>PCスリープ ⚠️ ✅リアクションでの確認あり</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="scroll-x" style="margin-top:1.6rem">
+      <table>
+        <caption>🌐 ご主人さま専用 — Web制作</caption>
+        <thead><tr><th scope="col">コマンド</th><th scope="col">説明</th></tr></thead>
+        <tbody>
+          <tr><th scope="row"><code>/build &lt;名前&gt; &lt;要件&gt;</code></th><td>AIを選んで制作開始</td></tr>
+          <tr><th scope="row"><code>/deploy &lt;名前&gt;</code></th><td>GitHub リポジトリ作成 → push → Vercel / GitHub Pages</td></tr>
+          <tr><th scope="row"><code>/open &lt;名前&gt;</code></th><td>既存プロジェクトを IDE で開き直す</td></tr>
+          <tr><th scope="row"><code>/projects</code></th><td>作ったプロジェクトの一覧</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="scroll-x" style="margin-top:1.6rem">
+      <table>
+        <caption>⚙️ ご主人さま専用 — システム</caption>
+        <thead><tr><th scope="col">コマンド</th><th scope="col">説明</th></tr></thead>
+        <tbody>
+          <tr><th scope="row"><code>/evolve &lt;変更内容&gt;</code></th><td>自分のコードを書き換えて再起動 ⚠️ モデル選択＋✅確認あり</td></tr>
+          <tr><th scope="row"><code>/cli &lt;指示&gt;</code></th><td>ローカルの <code>claude</code> CLI を呼び出す（モデル選択あり）</td></tr>
+          <tr><th scope="row"><code>/diag</code></th><td>各機能が使えるかの健康診断</td></tr>
+          <tr><th scope="row"><code>/sync</code></th><td>スラッシュコマンドを Discord に登録し直す</td></tr>
+          <tr><th scope="row"><code>/cancel</code></th><td>実行中の長時間タスクを中止</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="table-note">
+      PC操作・Web制作・自己アップデートは、設定した「ご主人さま」本人しか実行できないよ。
+      未設定のときは、誰も実行できない状態になるんだ。
+    </p>
+  </div>
+</section>
+
+<!-- ===================== はじめかた ===================== -->
+<section id="start" class="tinted">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Getting Started</span>
+      <h2>はじめかた</h2>
+      <p>用意するのは Windows 10 / 11 と Python 3.13 以上、それに Discord Bot ひとつ。あとは順番にやるだけだよ。</p>
+    </div>
+
+    <ol class="steps">
+      <li>
+        <h3>Discord Bot を作って招待する</h3>
+        <p>
+          Discord Developer Portal で Bot を作って、トークンを取得。
+          <strong>MESSAGE CONTENT INTENT を必ず ON</strong> にしてね。これを忘れると会話に反応しないよ。
+        </p>
+        <p>
+          招待URLの SCOPES には <code>bot</code> と <code>applications.commands</code> の
+          <strong>両方</strong>が必要。片方だけだと <code>/</code> コマンドが出てこないんだ。
+        </p>
+      </li>
+      <li>
+        <h3>自分のユーザーIDを調べる</h3>
+        <p>
+          Discord の 設定 → 詳細設定 → 開発者モード を ON にして、自分のアイコンを右クリック → ユーザーIDをコピー。
+          このIDの人が「ご主人さま」になるよ。
+        </p>
+      </li>
+      <li>
+        <h3><code>.env</code> を作る</h3>
+        <p>テンプレートをコピーして値を埋める。最低限この2つがあれば起動するよ。</p>
+<pre><code>DISCORD_BOT_TOKEN=（手順1でコピーしたトークン）
+OWNER_USER_ID=（手順2でコピーした自分のID）</code></pre>
+        <p>
+          あとのキーは使いたい機能に応じて足すだけ。未設定の機能は自動で無効になるから、
+          いきなり全部そろえなくても大丈夫。
+        </p>
+      </li>
+      <li>
+        <h3>起動する</h3>
+        <p>
+          起動用のバッチをダブルクリック。初回だけ仮想環境の作成と依存インストールが走るよ（数分）。
+          異常終了しても5秒後に自動で復帰するから、置いておけば勝手に立ち直る。
+        </p>
+        <p>
+          <strong>初回は DRY RUN モードを推奨。</strong>
+          再起動・スリープ・デプロイ・自己書き換えが「ログ出力だけ」になるから、安心して動作確認できるよ。
+        </p>
+      </li>
+    </ol>
+
+    <blockquote style="margin-top:1.4rem">
+      <p>
+        <strong>Anthropic の APIキーは必須じゃないよ。</strong>
+        Web制作と自己アップデートは、ローカルの <code>claude</code> CLI がログイン済みなら、
+        そのサブスクリプションのまま動くんだ。
+      </p>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ===================== 安全設計 ===================== -->
+<section id="safety">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Safety</span>
+      <h2>安全設計</h2>
+      <p>
+        ネヴィは PC の電源を切ったり、自分のコードを書き換えたりできる。
+        だからこそ、止まるべきところで止まる仕組みを何重にも入れてあるよ。
+      </p>
+    </div>
+
+    <div class="grid three">
+      <div class="card">
+        <h3>🔐 オーナー限定</h3>
+        <p>PC操作・Web制作・自己アップデートは、設定したユーザーID本人だけ。未設定なら誰も実行できない。</p>
+      </div>
+      <div class="card">
+        <h3>✅ 実行前確認</h3>
+        <p>再起動 / スリープ / 自己アップデートは、30秒以内の ✅ リアクションが必要。押されなければ何もしない。</p>
+      </div>
+      <div class="card">
+        <h3>📋 アプリ許可リスト</h3>
+        <p>起動できるのは事前に定義された名前だけ。任意のコマンドが実行されることはないよ。</p>
+      </div>
+      <div class="card">
+        <h3>📁 パス検証</h3>
+        <p>生成したファイルは <code>projects/&lt;名前&gt;/</code> の外に絶対に書き込まない。</p>
+      </div>
+      <div class="card">
+        <h3>🧪 DRY RUN</h3>
+        <p>破壊的な操作を全部ログ出力だけに切り替えられる。設定を試すときの安全装置だよ。</p>
+      </div>
+      <div class="card">
+        <h3>🕶️ 秘匿情報の伏字</h3>
+        <p>ログと Discord 出力から APIキーやトークンを自動でマスク。push の認証情報も設定ファイルに残さない。</p>
+      </div>
+    </div>
+
+    <h3 style="margin-top:2.4rem">自己アップデートの流れ</h3>
+    <p style="color:var(--text-soft)">
+      自分を書き換えるのが一番こわい操作。だから、失敗しても必ず戻れる道を用意してあるよ。
+    </p>
+    <div class="term">
+      <div class="term-bar">
+        <span class="dot" style="background:#FF6B6B"></span>
+        <span class="dot" style="background:#FFD43B"></span>
+        <span class="dot" style="background:#3BC9DB"></span>
+        <span style="margin-left:.4rem">self-update pipeline</span>
+      </div>
+<pre><code>/evolve &lt;変更内容&gt;
+  → ✅確認
+  → git commit でバックアップ
+  → AI に自分のソースを書き換えさせる
+  → 出力が極端に短くないか検査（省略防止）
+  → 構文チェック
+  → NG なら破棄して現状維持 / OK なら適用
+  → 即時再起動
+  → 起動完了まで到達したら成功
+  → 到達せず落ちたら次回起動時に自動ロールバック</code></pre>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== デザイン ===================== -->
+<section id="design" class="tinted">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Design</span>
+      <h2>デザイン</h2>
+      <p>
+        ネヴィの見た目と口調は、デザイン資料に「正典」としてまとまっているよ。
+        このページの色もイラストも、全部そこから持ってきているんだ。
+      </p>
+    </div>
+
+    <h3>公式パレット</h3>
+    <div class="palette">
+      <div class="sw">
+        <div class="chipbox" style="background:#3BC9DB"></div>
+        <div class="meta"><span class="name">メインボディ</span><span class="hex">#3BC9DB</span></div>
+      </div>
+      <div class="sw">
+        <div class="chipbox" style="background:#1098AD"></div>
+        <div class="meta"><span class="name">ボディ影</span><span class="hex">#1098AD</span></div>
+      </div>
+      <div class="sw">
+        <div class="chipbox" style="background:#FFD43B"></div>
+        <div class="meta"><span class="name">背びれ／角</span><span class="hex">#FFD43B</span></div>
+      </div>
+      <div class="sw">
+        <div class="chipbox" style="background:#FF6B6B"></div>
+        <div class="meta"><span class="name">頬・アクセント</span><span class="hex">#FF6B6B</span></div>
+      </div>
+      <div class="sw">
+        <div class="chipbox" style="background:#1A1A2E"></div>
+        <div class="meta"><span class="name">目</span><span class="hex">#1A1A2E</span></div>
+      </div>
+      <div class="sw">
+        <div class="chipbox" style="background:#E3FAFC; box-shadow: inset 0 0 0 1px rgba(0,0,0,.08)"></div>
+        <div class="meta"><span class="name">おなか</span><span class="hex">#E3FAFC</span></div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:2.2rem">アスキーアート</h3>
+    <p style="color:var(--text-soft)"><code>/about</code> を打つと出てくるやつだよ。</p>
+<pre class="ascii" aria-label="ネヴィのアスキーアート">        ▄▄▄▄▄
+      ▄█▀   ▀█▄        ~ ~ ~
+     █▀  ●   ● ▀█     ~  N E V I  ~
+     █    ▽    █       ~ ~ ~
+     ▀█▄▄▄▄▄▄▄█▀
+    ◢█████████████◣
+   ◢███████████████◣  ⟩⟩
+   ▀█████████████████◤
+      ▀▀▀     ▀▀▀</pre>
+
+<pre class="ascii" style="margin-top:.8rem" aria-label="コンパクト版のアスキーアート"> (⌐■ω■)~  &lt; ガオ！</pre>
+
+    <h3 style="margin-top:2.2rem">口調のルール</h3>
+    <div class="grid">
+      <div class="card">
+        <p>一人称は「ネヴィ」、呼びかけは「ご主人さま」。語尾は「〜だよ！」「〜だね！」「〜しちゃうね！」が基本。</p>
+        <p>「ガオ！」は1メッセージにつき最大1回まで。多用するとうるさいからね。</p>
+      </div>
+      <div class="card">
+        <p>絵文字は 🌊 🐉 ⚡ ✨ を中心に、1メッセージ 0〜2個まで。長文は垂れ流さない。まず結論、次に詳細。</p>
+        <p><strong>明るい口調でも、失敗・エラー・未完了は必ず正直に伝える。</strong>取り繕わないのが一番大事なルールだよ。</p>
+      </div>
+    </div>
+
+    <h3 style="margin-top:2.2rem">セリフ集より</h3>
+    <ul class="lines">
+      <li><span class="tag">boot</span>ガオ！ネヴィ、起動したよ！今日もよろしくね！</li>
+      <li><span class="tag">start</span>まかせて！ネヴィがやっちゃうね！</li>
+      <li><span class="tag">done</span>できたよ！ネヴィにかかればこんなもんだよ！</li>
+      <li><span class="tag">error</span>ごめん、ネヴィ失敗しちゃった。エラーはそのまま出しておくね！</li>
+      <li><span class="tag">confirm</span>これは戻せない操作だよ。ほんとにやる？ ✅ を押してね！</li>
+      <li><span class="tag">deploy</span>🚀 デプロイ完了だよ！世界に公開されたよ〜！</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p style="margin:0">
+      <strong>ネヴィ (Nevi)</strong> — Windows常駐 Discord AI秘書。
+      このページはネヴィ自身の紹介ページで、<code>/build</code> の仕組みで生成された静的サイトだよ。
+      外部のCDNもフォントも使わない、1ファイル完結。
+    </p>
+    <p style="margin:0" class="sign">🌊 それじゃ、よいネヴィライフを！ ガオ！</p>
+  </div>
+</footer>
+
+</body>
+</html>
