@@ -941,5 +941,26 @@ blockquote p:last-child { margin-bottom: 0; }
   </div>
 </footer>
 
+<script>
+(async function() {
+  try {
+    const res = await fetch('site_data.json?t=' + Date.now());
+    if (!res.ok) return;
+    const data = await res.json();
+    if (!data.integrations) return;
+
+    const nav = document.querySelector('.nav');
+    if (nav && data.updated_at) {
+      const badge = document.createElement('span');
+      badge.style.cssText = 'font-size:0.75rem; background:var(--gold); color:#1A1A2E; padding:0.2rem 0.5rem; border-radius:999px; font-weight:700; margin-left:0.4rem;';
+      const d = new Date(data.updated_at);
+      badge.textContent = '⚡ Live ' + (d.getMonth()+1) + '/' + d.getDate() + '更新';
+      nav.appendChild(badge);
+    }
+  } catch (e) {
+    console.log('site_data.json fetch skipped', e);
+  }
+})();
+</script>
 </body>
 </html>

@@ -1,0 +1,21 @@
+{
+  "version": "2.2.0",
+  "bot_name": "Nevi",
+  "updated_at": "2026-08-04T23:26:03.933730",
+  "integrations": {
+    "Gemini API": true,
+    "Groq API": true,
+    "Anthropic API": false,
+    "claude CLI": true,
+    "Antigravity CLI (agy)": true,
+    "Google カレンダー": true,
+    "GitHub (GitHub Pages)": true,
+    "OpenWeatherMap（天気）": true,
+    "Tavily（Web検索）": true,
+    "MCP サーバー連携": true,
+    "PCのスクリーンショット": true,
+    "PCの音量・メディア操作": true
+  },
+  "features": {},
+  "status": "online"
+}
