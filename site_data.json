@@ -1,13 +1,13 @@
 {
   "version": "2.2.0",
   "bot_name": "Nevi",
-  "updated_at": "2026-08-04T23:32:22.068675",
+  "updated_at": "2026-08-04T23:43:13.547636",
   "integrations": {
     "Gemini API": true,
     "Groq API": true,
     "Anthropic API": false,
     "claude CLI": true,
-    "Antigravity CLI (agy)": true,
+    "Antigravity Agent Engine (高速・高品質)": true,
     "Google カレンダー": true,
     "GitHub (GitHub Pages)": true,
     "OpenWeatherMap（天気）": true,
