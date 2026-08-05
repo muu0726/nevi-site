@@ -694,11 +694,13 @@ blockquote p:last-child { margin-bottom: 0; }
         <caption>🌐 ご主人さま専用 — Web制作</caption>
         <thead><tr><th scope="col">コマンド</th><th scope="col">説明</th></tr></thead>
         <tbody>
+          <tr><th scope="row"><code>/spec &lt;名前&gt; [概要]</code></th><td>対話で仕様を引き出してプロ級指示書を作成し、そのまま制作開始</td></tr>
           <tr><th scope="row"><code>/build &lt;名前&gt; &lt;要件&gt; [モデル]</code></th><td>AIを選んで制作開始。既存プロジェクトを指定すれば編集にもなる</td></tr>
           <tr><th scope="row"><code>/update &lt;名前&gt; &lt;要件&gt; [モデル]</code></th><td>既存プロジェクトを更新・編集する</td></tr>
+          <tr><th scope="row"><code>/qa &lt;対象&gt; [観点] [モデル]</code></th><td>プロジェクトやネヴィ自身の仕様を徹底調査し、問題点・改善点を報告</td></tr>
           <tr><th scope="row"><code>/fix &lt;名前&gt; [問題] [モデル]</code></th><td>不具合を調査して修正。内容を省くと全ファイルを点検するよ</td></tr>
           <tr><th scope="row"><code>/commit &lt;名前&gt; [メッセージ]</code></th><td>変更をコミットして GitHub に push</td></tr>
-          <tr><th scope="row"><code>/deploy &lt;名前&gt; [公開先]</code></th><td>GitHub リポジトリ作成 → push → Vercel（既定）か GitHub Pages</td></tr>
+          <tr><th scope="row"><code>/deploy &lt;名前&gt; [公開先]</code></th><td>GitHub リポジトリ作成 → push → GitHub Pages 自動公開</td></tr>
           <tr><th scope="row"><code>/open &lt;名前&gt; [モデル]</code></th><td>Antigravity IDE で開き直す。モデルを選ぶと <code>claude</code> ターミナルも一緒に開く</td></tr>
           <tr><th scope="row"><code>/projects</code></th><td>作ったプロジェクトの一覧</td></tr>
         </tbody>
@@ -712,13 +714,16 @@ blockquote p:last-child { margin-bottom: 0; }
         <tbody>
           <tr><th scope="row"><code>/evolve &lt;変更内容&gt;</code></th><td>自分のコードを書き換えて再起動 ⚠️ モデル選択＋✅確認あり</td></tr>
           <tr><th scope="row"><code>/dashboard</code></th><td>Web ダッシュボード (http://localhost:8765) の URL 表示</td></tr>
+          <tr><th scope="row"><code>/mcp [action]</code></th><td>MCP サーバーの接続状況確認・ツール一覧・手動再接続</td></tr>
+          <tr><th scope="row"><code>/search &lt;ワード&gt;</code></th><td>Tavily でいまの Web をリアルタイム検索して要約レポート化</td></tr>
+          <tr><th scope="row"><code>/auto &lt;指示&gt;</code></th><td>自然言語の指示から AI がタイトルと間隔を解析して自動タスク登録</td></tr>
           <tr><th scope="row"><code>/token</code></th><td>Claude CLI ＆ Antigravity CLI のトークン消費量・集計レポート表示</td></tr>
           <tr><th scope="row"><code>/news</code></th><td>最新ITニュースを今すぐ取得してダイジェストで送信</td></tr>
           <tr><th scope="row"><code>/cli &lt;指示&gt;</code></th><td>ローカルの <code>claude</code> CLI を呼び出す（モデル選択あり）</td></tr>
           <tr><th scope="row"><code>/agy &lt;指示&gt;</code></th><td>Antigravity CLI を呼び出す（モデル選択あり）。使い捨てフォルダで動くよ</td></tr>
           <tr><th scope="row"><code>/diag</code></th><td>各機能が使えるかの健康診断</td></tr>
           <tr><th scope="row"><code>/sync</code></th><td>スラッシュコマンドを Discord に登録し直す</td></tr>
-          <tr><th scope="row"><code>/cancel</code></th><td>実行中の長時間タスクを中止</td></tr>
+          <tr><th scope="row"><code>/cancel</code></th><td>実行中の制作タスク・対話セッションを即座に破棄・万能リセット</td></tr>
         </tbody>
       </table>
     </div>
