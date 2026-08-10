@@ -1,7 +1,7 @@
 {
-  "version": "2b3c9d62",
+  "version": "ad00a0cf",
   "bot_name": "Nevi",
-  "updated_at": "2026-08-11T02:59:42.712236+09:00",
+  "updated_at": "2026-08-11T03:15:24.522863+09:00",
   "integrations": {
     "Gemini API": true,
     "Groq API": true,
@@ -50,6 +50,7 @@
     "projects",
     "put",
     "qa",
+    "read",
     "reboot",
     "research",
     "rm",
@@ -59,6 +60,7 @@
     "spec",
     "ss",
     "status",
+    "study",
     "sync",
     "task",
     "test",
@@ -71,7 +73,7 @@
     "watchdog",
     "weekly"
   ],
-  "command_count": 53,
+  "command_count": 55,
   "apps": [
     "antigravity",
     "calc",
