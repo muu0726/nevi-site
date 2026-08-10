@@ -1,7 +1,7 @@
 {
-  "version": "316be68e",
+  "version": "83269064",
   "bot_name": "Nevi",
-  "updated_at": "2026-08-10T17:44:51.113764+09:00",
+  "updated_at": "2026-08-10T21:25:52.326710+09:00",
   "integrations": {
     "Gemini API": true,
     "Groq API": true,
