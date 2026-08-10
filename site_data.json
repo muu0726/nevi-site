@@ -1,7 +1,7 @@
 {
-  "version": "0b640658",
+  "version": "50b1df28",
   "bot_name": "Nevi",
-  "updated_at": "2026-08-10T22:16:29.474589+09:00",
+  "updated_at": "2026-08-10T23:06:27.204536+09:00",
   "integrations": {
     "Gemini API": true,
     "Groq API": true,
@@ -28,13 +28,16 @@
     "cancel",
     "cli",
     "commit",
+    "config",
     "dashboard",
     "deploy",
     "diag",
     "evolve",
     "evolvelog",
     "fix",
+    "get",
     "help",
+    "log",
     "mcp",
     "media",
     "nevi",
@@ -44,6 +47,7 @@
     "ping",
     "profile",
     "projects",
+    "put",
     "qa",
     "reboot",
     "research",
@@ -60,9 +64,10 @@
     "topic",
     "trend",
     "update",
-    "vol"
+    "vol",
+    "watchdog"
   ],
-  "command_count": 44,
+  "command_count": 49,
   "apps": [
     "antigravity",
     "calc",
