@@ -1,7 +1,7 @@
 {
-  "version": "15fd7365",
+  "version": "0b640658",
   "bot_name": "Nevi",
-  "updated_at": "2026-08-10T21:41:22.397637+09:00",
+  "updated_at": "2026-08-10T22:16:29.474589+09:00",
   "integrations": {
     "Gemini API": true,
     "Groq API": true,
@@ -32,6 +32,7 @@
     "deploy",
     "diag",
     "evolve",
+    "evolvelog",
     "fix",
     "help",
     "mcp",
@@ -61,7 +62,7 @@
     "update",
     "vol"
   ],
-  "command_count": 43,
+  "command_count": 44,
   "apps": [
     "antigravity",
     "calc",
