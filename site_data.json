@@ -1,7 +1,7 @@
 {
   "version": "f450b660",
   "bot_name": "Nevi",
-  "updated_at": "2026-08-14T17:27:26.346613+09:00",
+  "updated_at": "2026-08-14T17:57:41.419304+09:00",
   "integrations": {
     "Gemini API": true,
     "Groq API": true,
@@ -12,7 +12,7 @@
     "GitHub (GitHub Pages)": true,
     "OpenWeatherMap（天気）": true,
     "Tavily（Web検索）": true,
-    "MCP サーバー連携": false,
+    "MCP サーバー連携": true,
     "PCのスクリーンショット": true,
     "PCの音量・メディア操作": true
   },
@@ -31,9 +31,7 @@
     "config",
     "dashboard",
     "deploy",
-    "diag",
     "evolve",
-    "evolvelog",
     "fix",
     "followup",
     "get",
@@ -55,7 +53,6 @@
     "research",
     "rm",
     "search",
-    "sites",
     "sleep",
     "spec",
     "ss",
@@ -64,16 +61,14 @@
     "sync",
     "task",
     "test",
-    "token",
     "topic",
     "trend",
     "update",
     "vault",
     "vol",
-    "watchdog",
-    "weekly"
+    "watchdog"
   ],
-  "command_count": 55,
+  "command_count": 50,
   "apps": [
     "antigravity",
     "calc",
