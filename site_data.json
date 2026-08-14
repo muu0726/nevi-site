@@ -1,7 +1,7 @@
 {
-  "version": "6a47870f",
+  "version": "f450b660",
   "bot_name": "Nevi",
-  "updated_at": "2026-08-11T21:20:28.570329+09:00",
+  "updated_at": "2026-08-14T17:27:26.346613+09:00",
   "integrations": {
     "Gemini API": true,
     "Groq API": true,
@@ -12,7 +12,7 @@
     "GitHub (GitHub Pages)": true,
     "OpenWeatherMap（天気）": true,
     "Tavily（Web検索）": true,
-    "MCP サーバー連携": true,
+    "MCP サーバー連携": false,
     "PCのスクリーンショット": true,
     "PCの音量・メディア操作": true
   },
